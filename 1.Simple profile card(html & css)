@@ -1,0 +1,23 @@
+html
+<div class="profile-card">
+    <img src="profile.jpg" alt="Profile Picture">
+    <h2>John Doe</h2>
+    <p>Software Engineer</p>
+    <p class="bio">Passionate about coding and design.</p>
+    <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+</div>
+
+css
+.profile-card {
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+.profile-card:hover {
+    transform: scale(1.05);
+}
