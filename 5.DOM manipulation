@@ -1,0 +1,53 @@
+<div class="slider-container">
+    <button onclick="prevImage()">&#10094; Prev</button>
+    <img id="slider" src="" alt="Image Slider">
+    <button onclick="nextImage()">Next &#10095;</button>
+</div>
+
+<script>
+    const images = [
+        "https://via.placeholder.com/600x300/FF5733/FFFFFF?text=Image+1",
+        "https://via.placeholder.com/600x300/33FF57/FFFFFF?text=Image+2",
+        "https://via.placeholder.com/600x300/3357FF/FFFFFF?text=Image+3"
+    ];
+
+    let currentIndex = 0;
+
+    function updateImage() {
+        document.getElementById("slider").src = images[currentIndex];
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateImage();
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateImage();
+    }
+
+    // Initialize with the first image
+    updateImage();
+</script>
+
+<style>
+    .slider-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    img {
+        width: 600px;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    button {
+        padding: 10px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+</style>
